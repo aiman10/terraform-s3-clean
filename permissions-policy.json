@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListBucketsAndCreateTargetBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "s3:CreateBucket"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ManageBackendAndDemoBuckets",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::tf-remote-backend-ehb-863745572691",
+        "arn:aws:s3:::tf-remote-backend-ehb-863745572691/*",
+        "arn:aws:s3:::mlops-course-ehb-datastore-dev-863745572691",
+        "arn:aws:s3:::mlops-course-ehb-datastore-dev-863745572691/*"
+      ]
+    }
+  ]
+}
